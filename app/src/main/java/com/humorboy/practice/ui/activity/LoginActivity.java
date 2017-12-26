@@ -1,8 +1,11 @@
 package com.humorboy.practice.ui.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,6 +14,11 @@ import com.humorboy.practice.biz.personcenter.IUserLoginView;
 import com.humorboy.practice.biz.personcenter.LoginPresenter;
 import com.humorboy.practice.constant.Event;
 import com.humorboy.practice.ui.base.BaseActivity;
+import com.humorboy.practice.util.ToastUtil;
+import com.yanzhenjie.permission.AndPermission;
+import com.yanzhenjie.permission.PermissionListener;
+
+import java.util.List;
 
 public class LoginActivity extends BaseActivity implements IUserLoginView {
     private TextInputEditText userName;
@@ -104,4 +112,33 @@ public class LoginActivity extends BaseActivity implements IUserLoginView {
     public void hideLoading() {
 
     }
+
+    private void checkPermission() {
+        AndPermission.with(this)
+                .requestCode(100)
+                .permission(
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.SEND_SMS,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.LOCATION_HARDWARE)
+                .callback(listener)
+                .start();
+    }
+
+    private PermissionListener listener = new PermissionListener() {
+
+        @Override
+        public void onSucceed(int requestCode, @NonNull List<String> grantPermissions) {
+            Log.d(TAG,"permission check success!");
+        }
+
+        @Override
+        public void onFailed(int requestCode, @NonNull List<String> deniedPermissions) {
+            finish();
+        }
+    };
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.humorboy.practice.R;
+import com.humorboy.practice.ui.activity.MapActivity;
 import com.humorboy.practice.ui.activity.ThreadPoolTestActivity;
 
 import java.util.ArrayList;
@@ -88,7 +89,8 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
         }else if("语音识别".equals(name)){
 
         }else if("LBS".equals(name)){
-
+            Intent intent = new Intent(mContext, MapActivity.class);
+            mContext.startActivity(intent);
         }
     }
 
