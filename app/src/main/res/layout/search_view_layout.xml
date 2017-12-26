@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/state_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="16sp"
+            android:imeOptions="actionSearch"
+            android:inputType="number"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:cursorVisible="false"
+            android:hint="可输入车位编号搜索"
+            android:paddingLeft="30dp"
+            android:paddingRight="10dp"
+            android:lines="1"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:background="@drawable/search_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:drawableLeft="@mipmap/search_icon" />
+
+        <TextView
+            android:id="@+id/search_close_btn"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+            android:drawableLeft="@mipmap/close_icon" />
+
+    </RelativeLayout>
+    
+</RelativeLayout>
