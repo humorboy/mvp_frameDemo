@@ -8,6 +8,8 @@ import com.humorboy.practice.bridge.BridgeLifeCycleSetKeeper;
 import com.humorboy.practice.bridge.Bridges;
 import com.humorboy.practice.bridge.cache.localstorage.LocalFileStorageManager;
 import com.humorboy.practice.util.ToastUtil;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 
@@ -44,8 +46,19 @@ public class DemoApplication extends Application
     @Override
     public void onCreate()
     {
+        initSpeech();
         super.onCreate();
         initData();
+    }
+
+    //语音识别初始化
+    private void initSpeech() {
+        StringBuffer param = new StringBuffer();
+        param.append("appid="+getString(R.string.app_id));
+        param.append(",");
+        // 设置使用v5+
+        param.append(SpeechConstant.ENGINE_MODE+"="+SpeechConstant.MODE_MSC);
+        SpeechUtility.createUtility(DemoApplication.this, param.toString());
     }
 
     /**

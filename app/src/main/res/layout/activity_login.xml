@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dip"
             android:layout_weight="1"
-            android:background="@drawable/button_register_bg"
+            android:background="@drawable/button_presed_bg"
             android:gravity="center"
             android:paddingBottom="7dp"
             android:paddingTop="7dp"

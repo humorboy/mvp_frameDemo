@@ -53,7 +53,7 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        overridePendingTransition(R.anim.right_in, R.anim.right_out);//activity  切换动画
+        overridePendingTransition(R.anim.right_in, R.anim.left_out);//activity  切换动画
         super.onCreate(savedInstanceState);
         //状态栏设置
         setTranslucentStatus(true);

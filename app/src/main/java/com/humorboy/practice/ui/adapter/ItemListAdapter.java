@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.humorboy.practice.R;
 import com.humorboy.practice.ui.activity.MapActivity;
+import com.humorboy.practice.ui.activity.SpeechRecognitionActivity;
 import com.humorboy.practice.ui.activity.ThreadPoolTestActivity;
 
 import java.util.ArrayList;
@@ -83,15 +84,16 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
     }
 
     private void switchActivity(String name) {
+        Intent intent = null;
         if("线程池".equals(name)){
-            Intent intent = new Intent(mContext, ThreadPoolTestActivity.class);
-            mContext.startActivity(intent);
+            intent = new Intent(mContext, ThreadPoolTestActivity.class);
         }else if("语音识别".equals(name)){
-
+            intent = new Intent(mContext, SpeechRecognitionActivity.class);
         }else if("LBS".equals(name)){
-            Intent intent = new Intent(mContext, MapActivity.class);
-            mContext.startActivity(intent);
+            intent = new Intent(mContext, MapActivity.class);
         }
+        if(intent != null)
+             mContext.startActivity(intent);
     }
 
 }

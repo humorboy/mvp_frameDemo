@@ -19,7 +19,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:cursorVisible="false"
-            android:hint="可输入车位编号搜索"
+            android:hint="input search text"
             android:paddingLeft="30dp"
             android:paddingRight="10dp"
             android:lines="1"
