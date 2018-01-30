@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * <页面基础公共功能抽象>
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2016/6/6]
  * @see [相关类/方法]
  * @since [V1]

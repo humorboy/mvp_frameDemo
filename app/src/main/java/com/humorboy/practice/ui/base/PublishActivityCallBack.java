@@ -5,7 +5,7 @@ import android.os.Bundle;
 /**
  * <页面跳转封装>
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2016/6/6]
  * @see [相关类/方法]
  * @since [V1]

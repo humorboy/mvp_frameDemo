@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity{
     * 初始化actionbar
     */
     @Override
-    public void initViews() {
+    public void initViews(Bundle bundle) {
         initActionBar();
         item_recyclerview = (RecyclerView) findViewById(R.id.item_recyclerview);
         item_recyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -70,6 +70,7 @@ public class MainActivity extends BaseActivity{
         insertItem("图片");
         insertItem("UI");
         insertItem("动画");
+        insertItem("Loading View");
     }
 
     private void insertItem(String itemText){
@@ -96,25 +97,5 @@ public class MainActivity extends BaseActivity{
         super.setHeader();
         title.setText("主页");
         initActionBar();
-    }
-
-    @Override
-    public void onError(String errorMsg, String code) {
-
-    }
-
-    @Override
-    public void onSuccess() {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 }

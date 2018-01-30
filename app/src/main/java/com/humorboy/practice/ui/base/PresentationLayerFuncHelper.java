@@ -3,12 +3,12 @@ package com.humorboy.practice.ui.base;
 import android.content.Context;
 import android.view.View;
 
-import com.humorboy.practice.util.ToastUtil;
+import com.humorboy.practice.utils.ToastUtil;
 
 /**
  * <页面基础公共功能实现>
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2016/6/6]
  * @see [相关类/方法]
  * @since [V1]

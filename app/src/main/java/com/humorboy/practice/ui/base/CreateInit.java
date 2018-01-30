@@ -1,9 +1,11 @@
 package com.humorboy.practice.ui.base;
 
+import android.os.Bundle;
+
 /**
  * <公共方法抽象>
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2014-3-24]
  * @see [相关类/方法]
  * @since [V1]
@@ -12,7 +14,7 @@ public interface CreateInit {
     /**
      * 初始化布局组件
      */
-    public void initViews();
+    public void initViews(Bundle bundle);
 
     /**
      * 增加按钮点击事件

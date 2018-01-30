@@ -8,7 +8,7 @@ import android.preference.PreferenceActivity;
 import android.view.Window;
 
 import com.humorboy.practice.R;
-import com.humorboy.practice.util.SettingTextWatcher;
+import com.humorboy.practice.utils.SettingTextWatcher;
 
 /**
  * 听写设置界面

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.humorboy.practice.R;
+import com.humorboy.practice.ui.activity.LoadingViewActivity;
 import com.humorboy.practice.ui.activity.MapActivity;
 import com.humorboy.practice.ui.activity.SpeechRecognitionActivity;
 import com.humorboy.practice.ui.activity.ThreadPoolTestActivity;
@@ -91,9 +92,14 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
             intent = new Intent(mContext, SpeechRecognitionActivity.class);
         }else if("LBS".equals(name)){
             intent = new Intent(mContext, MapActivity.class);
+        }else if("Loading View".equals(name)){
+            intent = new Intent(mContext, LoadingViewActivity.class);
         }
-        if(intent != null)
-             mContext.startActivity(intent);
+
+
+        if(intent != null){
+            mContext.startActivity(intent);
+        }
     }
 
 }

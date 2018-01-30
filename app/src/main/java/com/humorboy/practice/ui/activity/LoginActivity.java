@@ -4,42 +4,34 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputEditText;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.humorboy.practice.R;
-import com.humorboy.practice.biz.personcenter.IUserLoginView;
-import com.humorboy.practice.biz.personcenter.LoginPresenter;
 import com.humorboy.practice.constant.Event;
 import com.humorboy.practice.ui.base.BaseActivity;
-import com.humorboy.practice.util.ToastUtil;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
 import java.util.List;
 
-public class LoginActivity extends BaseActivity implements IUserLoginView {
-    private TextInputEditText userName;
-    private TextInputEditText password;
+public class LoginActivity extends BaseActivity{
+    private EditText userName;
+    private EditText password;
     private Button login;
-
-    private LoginPresenter mUserLoginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login);
         super.onCreate(savedInstanceState);
-
-        presenter = mUserLoginPresenter = new LoginPresenter();
-        mUserLoginPresenter.attachView(this);
     }
 
     @Override
-    public void initViews() {
-        userName = (TextInputEditText) findViewById(R.id.username);
-        password = (TextInputEditText) findViewById(R.id.passowrd);
+    public void initViews(Bundle bundle) {
+        userName = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.passowrd);
         login = (Button) findViewById(R.id.login);
     }
 
@@ -71,7 +63,6 @@ public class LoginActivity extends BaseActivity implements IUserLoginView {
         super.onEventMainThread(event);
         switch (event){
             case IMAGE_LOADER_SUCCESS:
-                clearEditContent();
                 break;
         }
     }
@@ -85,32 +76,6 @@ public class LoginActivity extends BaseActivity implements IUserLoginView {
                 break;
         }
         super.onClick(v);
-    }
-
-    @Override
-    public void clearEditContent() {
-        userName.setText("");
-        password.setText("");
-    }
-
-    @Override
-    public void onError(String errorMsg, String code) {
-        showToast(errorMsg);
-    }
-
-    @Override
-    public void onSuccess() {
-        startActivity(MainActivity.class,null);
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 
     private void checkPermission() {

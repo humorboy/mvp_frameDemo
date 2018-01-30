@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.content.ContextCompat;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +15,8 @@ import android.widget.TextView;
 import com.humorboy.practice.R;
 import com.humorboy.practice.ui.base.BaseActivity;
 import com.humorboy.practice.ui.setting.IatSettings;
-import com.humorboy.practice.util.JsonParser;
-import com.humorboy.practice.util.ToastUtil;
+import com.humorboy.practice.utils.JsonParser;
+import com.humorboy.practice.utils.ToastUtil;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.RecognizerListener;
@@ -57,9 +56,9 @@ public class SpeechRecognitionActivity extends BaseActivity implements View.OnCl
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
     // 默认云端发音人
-    public static String voicerCloud="xiaoyan";
+    public static String voicerCloud="xiaomei";
     // 默认本地发音人
-    public static String voicerLocal="xiaoyan";
+    public static String voicerLocal="xiaomei";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +76,13 @@ public class SpeechRecognitionActivity extends BaseActivity implements View.OnCl
         right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
     }
 
     @Override
-    public void initViews() {
+    public void initViews(Bundle bundle) {
         result_text = (EditText) findViewById(R.id.result_text);
         speech_listen = (TextView) findViewById(R.id.speech_listen);
         speech_listen.setOnClickListener(this);
@@ -455,26 +454,6 @@ public class SpeechRecognitionActivity extends BaseActivity implements View.OnCl
         //发音人资源
         tempBuffer.append(ResourceUtil.generateResourcePath(this, ResourceUtil.RESOURCE_TYPE.assets, "tts/"+SpeechRecognitionActivity.voicerLocal+".jet"));
         return tempBuffer.toString();
-    }
-
-    @Override
-    public void onError(String errorMsg, String code) {
-
-    }
-
-    @Override
-    public void onSuccess() {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 
     @Override

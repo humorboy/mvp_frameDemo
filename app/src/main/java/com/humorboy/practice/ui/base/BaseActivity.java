@@ -15,11 +15,6 @@ import android.widget.TextView;
 
 import com.humorboy.practice.DemoApplication;
 import com.humorboy.practice.R;
-import com.humorboy.practice.biz.BasePresenter;
-import com.humorboy.practice.biz.IMvpView;
-import com.humorboy.practice.bridge.BridgeFactory;
-import com.humorboy.practice.bridge.Bridges;
-import com.humorboy.practice.bridge.http.OkHttpManager;
 import com.humorboy.practice.constant.Event;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
@@ -28,12 +23,12 @@ import de.greenrobot.event.EventBus;
 /**
  * <基础activity>
  *
- * @author caoyinfei
- * @version [版本号, 2014-3-24]
+ * @author humorboy
+ * @version [版本号, 2016-3-24]
  * @see [相关类/方法]
  * @since [V1]
  */
-public abstract class BaseActivity extends Activity implements CreateInit, PublishActivityCallBack, PresentationLayerFunc, IMvpView, OnClickListener {
+public abstract class BaseActivity extends Activity implements CreateInit, OnClickListener {
 
     private PresentationLayerFuncHelper presentationLayerFuncHelper;
 
@@ -46,9 +41,6 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
      * 标题，右边字符
      */
     protected TextView title, right;
-
-    public BasePresenter presenter;
-
     public final String TAG = this.getClass().getSimpleName();
 
     @Override
@@ -60,7 +52,7 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
         setSystemBarTintDrawable(ContextCompat.getDrawable(this,R.drawable.dwPrimary));
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(this);
         initData();
-        initViews();
+        initViews(savedInstanceState);
         setHeader();
         initListeners();
         DemoApplication.demoApplication.addActivity(this);
@@ -95,64 +87,9 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
     }
 
     @Override
-    public void startActivity(Class<?> openClass, Bundle bundle) {
-        Intent intent = new Intent(this, openClass);
-        if (null != bundle)
-            intent.putExtras(bundle);
-        startActivity(intent);
-    }
-
-    @Override
-    public void openActivityForResult(Class<?> openClass, int requestCode, Bundle bundle) {
-        Intent intent = new Intent(this, openClass);
-        if (null != bundle)
-            intent.putExtras(bundle);
-        startActivityForResult(intent, requestCode);
-    }
-
-    @Override
-    public void setResultOk(Bundle bundle) {
-        Intent intent = new Intent();
-        if (bundle != null) ;
-        intent.putExtras(bundle);
-        setResult(RESULT_OK, intent);
-        finish();
-    }
-
-    @Override
-    public void showToast(String msg) {
-        presentationLayerFuncHelper.showToast(msg);
-    }
-
-    @Override
-    public void showProgressDialog() {
-        presentationLayerFuncHelper.showProgressDialog();
-    }
-
-    @Override
-    public void hideProgressDialog() {
-        presentationLayerFuncHelper.hideProgressDialog();
-    }
-
-    @Override
-    public void showSoftKeyboard(View focusView) {
-        presentationLayerFuncHelper.showSoftKeyboard(focusView);
-    }
-
-    @Override
-    public void hideSoftKeyboard() {
-        presentationLayerFuncHelper.hideSoftKeyboard();
-    }
-
-    @Override
     protected void onDestroy() {
         DemoApplication.demoApplication.deleteActivity(this);
         EventBus.getDefault().unregister(this);
-        if (presenter != null) {
-            presenter.detachView(this);
-        }
-        OkHttpManager httpManager = BridgeFactory.getBridge(Bridges.HTTP);
-        httpManager.cancelActivityRequest(TAG);
         super.onDestroy();
     }
 

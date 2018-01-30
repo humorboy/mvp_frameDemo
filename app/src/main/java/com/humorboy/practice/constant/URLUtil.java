@@ -4,7 +4,7 @@ package com.humorboy.practice.constant;
  * <网络请求url地址>
  * <功能详细描述>
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2016/6/6]
  * @see [相关类/方法]
  * @since [V1]

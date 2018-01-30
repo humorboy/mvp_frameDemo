@@ -33,7 +33,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
     }
 
     @Override
-    public void initViews() {
+    public void initViews(Bundle bundle) {
         mHandler = new Handler(getMainLooper());
         log_view  = (TextView) findViewById(R.id.log_view);
         index_view  = (TextView) findViewById(R.id.index_view);
@@ -78,7 +78,10 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 }
             });
         }
+
     }
+
+
 
     private void testCachedThreadPool() {
         updateLogView("**无固定任务数量线程池**"+"\n",log_view);
@@ -135,26 +138,6 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 tv.setText(tv.getText()+""+text);
             }
         });
-    }
-
-    @Override
-    public void onError(String errorMsg, String code) {
-
-    }
-
-    @Override
-    public void onSuccess() {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 
     @Override

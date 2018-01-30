@@ -14,8 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.humorboy.practice.R;
-import com.humorboy.practice.util.KeybordUtil;
-import com.humorboy.practice.util.ToastUtil;
+import com.humorboy.practice.utils.KeybordUtil;
+import com.humorboy.practice.utils.ToastUtil;
 
 /**
  * Created by jhren on 2017/9/9.

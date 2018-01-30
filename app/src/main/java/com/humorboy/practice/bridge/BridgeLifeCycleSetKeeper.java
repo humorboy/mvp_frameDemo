@@ -12,7 +12,7 @@ import java.util.List;
  * 如果Bridge模块需要有初始化和销毁操作，且生命周期和Application一致，则将其生命周期方法交由此类管理，
  * Application会统一调度此类中保管的所有Bridge生命周期
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2016/6/6]
  * @see [相关类/方法]
  * @since [V1]

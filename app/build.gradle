@@ -1,21 +1,42 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.android.mvpframeshample"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+
+    // 解决的冲突：Duplicate files copied in APK META-INF/services/javax.annotation.processing.Processor
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
     }
 }
 
@@ -24,10 +45,36 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    //noinspection GradleCompatible
+    compile 'com.android.support:design:25.0.0'
+    //noinspection GradleCompatible
+    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.android.support:support-annotations:25.0.0'
     compile 'com.yanzhenjie:permission:1.0.8'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'de.greenrobot:greendao:2.1.0'
+    compile 'zhou.widget:richtext:1.0.4'
+    compile 'com.commit451:PhotoView:1.2.4'
+    compile 'com.github.zhaokaiqiang.klog:library:1.5.0'
+    compile('com.afollestad.material-dialogs:core:0.9.0.1') {
+        transitive = true
+    }
 }

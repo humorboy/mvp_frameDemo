@@ -3,12 +3,11 @@ package com.humorboy.practice.bridge.security;
 import android.content.Context;
 
 import com.humorboy.practice.bridge.BridgeLifeCycleListener;
-import com.humorboy.practice.capabilities.security.SecurityUtils;
 
 /**
  * <加解密管理类>
  *
- * @author caoyinfei
+ * @author humorboy
  * @version [版本号, 2016/6/12]
  * @see [相关类/方法]
  * @since [V1]

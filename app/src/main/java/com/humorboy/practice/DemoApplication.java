@@ -1,19 +1,18 @@
 package com.humorboy.practice;
 
 import android.app.Activity;
-import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
-import com.humorboy.practice.bridge.BridgeFactory;
 import com.humorboy.practice.bridge.BridgeLifeCycleSetKeeper;
-import com.humorboy.practice.bridge.Bridges;
-import com.humorboy.practice.bridge.cache.localstorage.LocalFileStorageManager;
-import com.humorboy.practice.util.ToastUtil;
+import com.humorboy.practice.utils.ToastUtil;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
-import com.squareup.picasso.OkHttpDownloader;
-import com.squareup.picasso.Picasso;
+import com.socks.library.KLog;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +25,7 @@ import java.util.List;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public class DemoApplication extends Application
+public class DemoApplication extends MultiDexApplication
 {
     /**
      * app实例
@@ -42,7 +41,8 @@ public class DemoApplication extends Application
      * 当前avtivity名称
      */
     public static String currentActivityName = "";
-    
+    private RefWatcher mRefWatcher;
+
     @Override
     public void onCreate()
     {
@@ -66,14 +66,17 @@ public class DemoApplication extends Application
      */
     private void initData() {
         demoApplication = this;
-        BridgeFactory.init(this);
         BridgeLifeCycleSetKeeper.getInstance().initOnApplicationCreate(this);
-        LocalFileStorageManager manager = BridgeFactory.getBridge(Bridges.LOCAL_FILE_STORAGE);
-        Picasso picasso = new Picasso.Builder(this).downloader(
-                new OkHttpDownloader(new File(manager.getCacheImgFilePath(this)))).build();
-        Picasso.setSingletonInstance(picasso);
+        // 如果检测到某个 activity 有内存泄露，LeakCanary 就是自动地显示一个通知
+        mRefWatcher = LeakCanary.install(this);
+        KLog.init(BuildConfig.DEBUG);
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onTerminate()
@@ -118,5 +121,21 @@ public class DemoApplication extends Application
             activity.finish();
             activity = null;
         }
+    }
+
+    /**
+     * 获取内存监控
+     *
+     * @param context
+     * @return
+     */
+    public static RefWatcher getRefWatcher(Context context) {
+        DemoApplication application = (DemoApplication) context.getApplicationContext();
+        return application.mRefWatcher;
+    }
+
+    // 获取ApplicationContext
+    public static Context getContext() {
+        return demoApplication;
     }
 }
