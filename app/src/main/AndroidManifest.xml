@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
-        android:name=".DemoApplication"
+        android:name=".app.DemoApplication"
         android:allowBackup="true"
         android:largeHeap="true"
         android:supportsRtl="true"
@@ -30,13 +30,15 @@
             android:name="com.amap.api.v2.apikey"
             android:value="6f3a077d6ce0253355af8214ef195091" />
 
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".module.main.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".module.news.ui.NewsActivity" />
+        <activity android:name=".module.settings.ui.SettingsActivity" />
         <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.ThreadPoolTestActivity" />
         <activity android:name=".ui.activity.MapActivity" />

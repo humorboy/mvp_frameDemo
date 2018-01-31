@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.humorboy.practice.R;
-import com.humorboy.practice.ui.base.BaseActivity;
+import com.humorboy.practice.base.BaseActivity;
 import com.humorboy.practice.ui.setting.IatSettings;
 import com.humorboy.practice.utils.JsonParser;
 import com.humorboy.practice.utils.ToastUtil;
@@ -33,7 +33,7 @@ import com.iflytek.cloud.util.ResourceUtil;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class SpeechRecognitionActivity extends BaseActivity implements View.OnClickListener {
+public class SpeechRecognitionActivity extends Activity implements View.OnClickListener {
     private final String TAG = getClass().getSimpleName();
     private EditText result_text;
     private TextView speech_listen,speech_synthetic;
@@ -62,27 +62,8 @@ public class SpeechRecognitionActivity extends BaseActivity implements View.OnCl
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_speech_recognition);
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void setHeader() {
-        super.setHeader();
-        title.setText("语音识别");
-        Drawable drawable = ContextCompat.getDrawable(this,R.mipmap.setting_icon);
-        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-        right.setCompoundDrawables(drawable, null, null, null);
-        right.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-    }
-
-    @Override
-    public void initViews(Bundle bundle) {
+        setContentView(R.layout.activity_speech_recognition);
         result_text = (EditText) findViewById(R.id.result_text);
         speech_listen = (TextView) findViewById(R.id.speech_listen);
         speech_listen.setOnClickListener(this);
@@ -116,7 +97,6 @@ public class SpeechRecognitionActivity extends BaseActivity implements View.OnCl
     int ret = 0;// 函数调用返回值
     @Override
     public void onClick(View v) {
-        super.onClick(v);
         switch (v.getId()){
             case R.id.speech_listen:
                 result_text.setText(null);// 清空显示内容
@@ -456,13 +436,4 @@ public class SpeechRecognitionActivity extends BaseActivity implements View.OnCl
         return tempBuffer.toString();
     }
 
-    @Override
-    public void initListeners() {
-
-    }
-
-    @Override
-    public void initData() {
-
-    }
 }

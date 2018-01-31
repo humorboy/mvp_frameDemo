@@ -9,37 +9,18 @@ import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.humorboy.practice.R;
-import com.humorboy.practice.ui.base.BaseActivity;
+import com.humorboy.practice.base.BaseActivity;
 
-public class MapActivity extends BaseActivity {
+public class MapActivity extends Activity {
     MapView mMapView = null;
     AMap aMap;
     private static final int STROKE_COLOR = Color.argb(180, 3, 145, 255);
     private static final int FILL_COLOR = Color.argb(10, 0, 0, 180);
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
         setContentView(R.layout.activity_map);
-        super.onCreate(savedInstanceState);
-    }
-
-    /**
-     * 方法必须重写
-     */
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mMapView.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void setHeader() {
-        super.setHeader();
-        title.setText("地图");
-    }
-
-    @Override
-    public void initViews(Bundle bundle) {
         //获取地图控件引用
         mMapView = (MapView) findViewById(R.id.map);
         //在activity执行onCreate时执行mMapView.onCreate(savedInstanceState)，创建地图
@@ -51,14 +32,13 @@ public class MapActivity extends BaseActivity {
         showMyLocation();
     }
 
+    /**
+     * 方法必须重写
+     */
     @Override
-    public void initListeners() {
-
-    }
-
-    @Override
-    public void initData() {
-
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mMapView.onSaveInstanceState(outState);
     }
 
     private void showMyLocation() {

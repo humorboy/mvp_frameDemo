@@ -3,7 +3,7 @@ package com.humorboy.practice.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.humorboy.practice.DemoApplication;
+import com.humorboy.practice.app.DemoApplication;
 import com.humorboy.practice.constant.Constant;
 
 /**

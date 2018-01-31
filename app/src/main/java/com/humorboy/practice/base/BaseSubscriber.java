@@ -3,7 +3,7 @@ package com.humorboy.practice.base;
 import android.support.annotation.CallSuper;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.humorboy.practice.DemoApplication;
+import com.humorboy.practice.app.DemoApplication;
 import com.humorboy.practice.callback.RequestCallback;
 import com.humorboy.practice.utils.NetUtil;
 import com.socks.library.KLog;

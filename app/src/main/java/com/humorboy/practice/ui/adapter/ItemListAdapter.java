@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.humorboy.practice.R;
+import com.humorboy.practice.module.settings.ui.SettingsActivity;
 import com.humorboy.practice.ui.activity.LoadingViewActivity;
 import com.humorboy.practice.ui.activity.MapActivity;
 import com.humorboy.practice.ui.activity.SpeechRecognitionActivity;
@@ -94,8 +95,9 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
             intent = new Intent(mContext, MapActivity.class);
         }else if("Loading View".equals(name)){
             intent = new Intent(mContext, LoadingViewActivity.class);
+        }else if("UI".equals(name)){
+            intent = new Intent(mContext, SettingsActivity.class);
         }
-
 
         if(intent != null){
             mContext.startActivity(intent);

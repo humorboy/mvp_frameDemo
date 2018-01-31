@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     android:background="@color/state_bg">
 
-    <include layout="@layout/common_title"/>
-    <com.humorboy.practice.view.SearchLayout
+    <!--<include layout="@layout/common_title"/>-->
+    <include layout="@layout/include_status_view"/>
+    <com.humorboy.practice.module.SearchLayout
         android:id="@+id/searchView"
-        android:layout_below="@+id/custom_actionbar"
+        android:layout_below="@+id/status_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

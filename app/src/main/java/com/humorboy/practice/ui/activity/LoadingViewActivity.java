@@ -2,22 +2,17 @@ package com.humorboy.practice.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ProgressBar;
 
 import com.github.ybq.android.spinkit.SpinKitView;
-import com.github.ybq.android.spinkit.SpriteFactory;
-import com.github.ybq.android.spinkit.Style;
-import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Circle;
-import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.github.ybq.android.spinkit.style.FadingCircle;
 import com.github.ybq.android.spinkit.style.RotatingCircle;
 import com.github.ybq.android.spinkit.style.ThreeBounce;
 import com.github.ybq.android.spinkit.style.Wave;
 import com.humorboy.practice.R;
-import com.humorboy.practice.ui.base.BaseActivity;
+import com.humorboy.practice.base.BaseActivity;
 
-public class LoadingViewActivity extends BaseActivity {
+public class LoadingViewActivity extends Activity {
 
     private SpinKitView spin_kit_circle;
     private SpinKitView spin_kit_wave;
@@ -28,18 +23,8 @@ public class LoadingViewActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_loading_view);
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void setHeader() {
-        super.setHeader();
-        title.setText("加载框");
-    }
-
-    @Override
-    public void initViews(Bundle bundle) {
+        setContentView(R.layout.activity_loading_view);
         spin_kit_circle = (SpinKitView) findViewById(R.id.spin_kit_circle);
         Circle circle = new Circle();
         spin_kit_circle.setIndeterminateDrawable(circle);
@@ -61,14 +46,4 @@ public class LoadingViewActivity extends BaseActivity {
         spin_kit_fadingcircle.setIndeterminateDrawable(fadingcircle);
     }
 
-
-    @Override
-    public void initListeners() {
-
-    }
-
-    @Override
-    public void initData() {
-
-    }
 }

@@ -1,19 +1,21 @@
 package com.humorboy.practice.ui.activity;
 
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.humorboy.practice.R;
-import com.humorboy.practice.ui.base.BaseActivity;
+import com.humorboy.practice.base.BaseActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class ThreadPoolTestActivity extends BaseActivity {
+public class ThreadPoolTestActivity extends Activity {
+    private static final String TAG = "ThreadPoolTestActivity";
     private Handler mHandler;
     private TextView log_view,index_view;
     private static String classIndex = "五种线程池:1,newFixedThreadPool(固定线程数量) 2,newCachedThreadPool(根据实际情况调整线程池中线程的数量)" +
@@ -22,18 +24,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private ScheduledExecutorService scheduledThreadPool ,singleThreadScheduledPool;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_thread_pool_test);
         super.onCreate(savedInstanceState);
-    }
-
-
-    @Override
-    public void initData() {
-        initThreadPool();
-    }
-
-    @Override
-    public void initViews(Bundle bundle) {
+        setContentView(R.layout.activity_thread_pool_test);
+        initData();
         mHandler = new Handler(getMainLooper());
         log_view  = (TextView) findViewById(R.id.log_view);
         index_view  = (TextView) findViewById(R.id.index_view);
@@ -43,10 +36,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
 //        testScheduledThreadPool();
     }
 
-    @Override
-    public void setHeader() {
-        super.setHeader();
-        title.setText(""+getClass().getSimpleName());
+
+    public void initData() {
+        initThreadPool();
     }
 
     private void initThreadPool() {
@@ -138,11 +130,6 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 tv.setText(tv.getText()+""+text);
             }
         });
-    }
-
-    @Override
-    public void initListeners() {
-
     }
 
 }

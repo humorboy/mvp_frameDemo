@@ -3,7 +3,7 @@ package com.humorboy.practice.http.manager;
 
 import android.util.SparseArray;
 
-import com.humorboy.practice.DemoApplication;
+import com.humorboy.practice.app.DemoApplication;
 import com.humorboy.practice.base.BaseSchedulerTransformer;
 import com.humorboy.practice.bean.NeteastNewsDetail;
 import com.humorboy.practice.bean.NeteastNewsSummary;
