@@ -7,20 +7,26 @@ import android.widget.EditText;
 
 import com.humorboy.practice.R;
 import com.humorboy.practice.annotation.ActivityFragmentInject;
+import com.humorboy.practice.app.AppManager;
 import com.humorboy.practice.module.main.presenter.IMainPresenter;
+import com.humorboy.practice.module.main.presenter.IMainPresenterImpl;
 import com.humorboy.practice.module.main.view.IMainView;
+import com.humorboy.practice.module.settings.presenter.ISettingsPresenterImpl;
 import com.humorboy.practice.ui.adapter.ItemListAdapter;
 import com.humorboy.practice.base.BaseActivity;
 import com.humorboy.practice.module.SearchLayout;
+import com.humorboy.practice.utils.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
 @ActivityFragmentInject(contentViewId = R.layout.main_activity,
+        menuId = R.menu.menu_news,
+        hasNavigationView = true,
         toolbarTitle = R.string.mains,
-        toolbarIndicator = R.drawable.ic_list_white)
-
+        toolbarIndicator = R.drawable.ic_list_white,
+        menuDefaultCheckedItem = R.id.action_mains)
 public class MainActivity extends BaseActivity<IMainPresenter> implements IMainView {
     private RecyclerView item_recyclerview;
     private ItemListAdapter mAdapter;
@@ -43,6 +49,13 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
             }
         });
         inputEdittext = searchView.getSearch_EditText();
+
+        // 设了默认的windowBackground使得冷启动没那么突兀，这里再设置为空减少过度绘制
+//        getWindow().setBackgroundDrawable(null);
+        ViewUtil.quitFullScreen(this);
+//        AppManager.getAppManager().orderNavActivity(getClass().getName(), false);
+
+        mPresenter = new IMainPresenterImpl(this);
     }
 
     public void initData() {

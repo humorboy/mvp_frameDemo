@@ -312,6 +312,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
                     case R.id.action_news:
                         mClass = NewsActivity.class;
                         break;
+                    case R.id.action_mains:
+                        mClass = MainActivity.class;
+                        break;
                     case R.id.action_settings:
                         mClass = SettingsActivity.class;
                         break;

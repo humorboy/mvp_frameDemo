@@ -9,9 +9,9 @@
             android:title="@string/news"/>
 
         <item
-            android:id="@+id/action_video"
+            android:id="@+id/action_mains"
             android:icon="@drawable/ic_ondemand_video_black"
-            android:title="@string/video"/>
+            android:title="@string/mains"/>
 
         <item
             android:id="@+id/action_photo"

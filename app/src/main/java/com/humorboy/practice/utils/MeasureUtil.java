@@ -17,7 +17,7 @@ import com.socks.library.KLog;
 
 /**
  * ClassName：MeasureUtil<p>
- * Author：Oubowu<p>
+ * Author：humorboy<p>
  * Fuction：测量工具类<p>
  * CreateDate：2015/7/8 17:19<p>
  * UpdateAuthor：<p>
