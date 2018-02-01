@@ -2,7 +2,7 @@ package com.humorboy.practice.bean;
 
 /**
  * ClassName: NewsChannel<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 频道管理的封装<p>
  * CreateDate: 2016/2/20 0:43<p>
  * UpdateUser: <p>

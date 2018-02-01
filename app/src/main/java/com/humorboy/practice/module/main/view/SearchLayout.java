@@ -1,4 +1,4 @@
-package com.humorboy.practice.module;
+package com.humorboy.practice.module.main.view;
 
 import android.content.Context;
 import android.text.Editable;

@@ -36,7 +36,7 @@ import zhou.widget.RichText;
 
 /**
  * ClassName: NewsDetailActivity<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻详情界面<p>
  * CreateDate: 2016/2/20 2:12<p>
  * UpdateUser: <p>

@@ -19,7 +19,7 @@ import rx.schedulers.Schedulers;
 
 /**
  * ClassName: INewsChannelInteractorImpl<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻管理的model层接口实现类<p>
  * CreateDate: 2016/2/20 14:03<p>
  * UpdateUser: <p>

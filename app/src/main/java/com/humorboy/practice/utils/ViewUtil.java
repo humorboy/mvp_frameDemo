@@ -17,7 +17,7 @@ import java.lang.reflect.Field;
 
 /**
  * ClassName: ViewUtil<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 处理屏幕啥的工具<p>
  * CreateDate: 2016/2/17 21:39<p>
  * UpdateUser: <p>

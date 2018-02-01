@@ -15,7 +15,7 @@ import com.humorboy.practice.utils.MeasureUtil;
 
 /**
  * ClassName: ThreePointLoadingView<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 三点加载动画<p>
  * CreateDate:2016/2/11 22:56<p>
  * UpdateUser:<p>

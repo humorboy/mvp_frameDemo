@@ -4,7 +4,7 @@ import android.view.View;
 
 /**
  * ClassName: OnItemClickAdapter<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: OnItemClickListener的适配器<p>
  * CreateDate:2016/2/14 1:48<p>
  * UpdateUser:<p>

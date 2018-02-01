@@ -6,7 +6,7 @@ import android.content.res.TypedArray;
 
 /**
  * ClassName: ThemeUtil<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 主题根据类，提取当前主题的属性<p>
  * CreateDate: 2016/3/20 10:30<p>
  * UpdateUser: <p>

@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * ClassName: HostType<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 请求数据host的类型<p>
  * CreateDate:2016/2/13 23:50<p>
  * UpdateUser:<p>

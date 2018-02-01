@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * ClassName: INewsView<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻视图接口<p>
  * CreateDate: 2016/2/17 20:25<p>
  * UpdateUser: <p>

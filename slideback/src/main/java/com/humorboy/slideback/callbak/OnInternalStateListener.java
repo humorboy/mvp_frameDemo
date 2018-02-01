@@ -1,8 +1,8 @@
-package com.oubowu.slideback.callbak;
+package com.humorboy.slideback.callbak;
 
 import android.support.annotation.FloatRange;
 
-import com.oubowu.slideback.widget.SlideBackLayout;
+import com.humorboy.slideback.widget.SlideBackLayout;
 
 /**
  * Created by Oubowu on 2016/9/22 0022 18:22.

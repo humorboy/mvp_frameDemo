@@ -8,7 +8,7 @@ import com.humorboy.practice.BuildConfig;
 
 /**
  * ClassName: ClickUtils<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 快速点击处理类<p>
  * CreateDate:2016/2/14 13:15<p>
  * UpdateUser:<p>

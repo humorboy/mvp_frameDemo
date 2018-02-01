@@ -7,7 +7,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 /**
  * ClassName: SimpleItemTouchHelperCallback<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: RecyclerView拖拽滑动的回调<p>
  * CreateDate:2016/2/14 1:48<p>
  * UpdateUser:<p>

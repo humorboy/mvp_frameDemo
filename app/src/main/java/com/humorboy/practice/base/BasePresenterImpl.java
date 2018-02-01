@@ -9,7 +9,7 @@ import rx.Subscription;
 
 /**
  * ClassName: BasePresenterBasePresenterImpl<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 代理的基类实现<p>
  * CreateDate:2016/2/14 1:45<p>
  * UpdateUser:<p>

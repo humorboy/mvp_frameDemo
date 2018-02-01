@@ -1,4 +1,4 @@
-<manifest package="com.oubowu.slideback"
+<manifest package="com.humorboy.slideback"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application android:allowBackup="true"

@@ -1,4 +1,4 @@
-package com.oubowu.slideback.widget;
+package com.humorboy.slideback.widget;
 
 
 import android.content.Context;

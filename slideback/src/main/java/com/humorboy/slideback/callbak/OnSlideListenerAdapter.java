@@ -1,4 +1,4 @@
-package com.oubowu.slideback.callbak;
+package com.humorboy.slideback.callbak;
 
 import android.support.annotation.FloatRange;
 

@@ -15,7 +15,7 @@ import com.humorboy.practice.db.DaoSession;
 import com.humorboy.practice.utils.ToastUtil;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
-import com.oubowu.slideback.ActivityHelper;
+import com.humorboy.slideback.ActivityHelper;
 import com.socks.library.KLog;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;

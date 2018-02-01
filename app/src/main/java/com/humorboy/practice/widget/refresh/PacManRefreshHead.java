@@ -20,7 +20,7 @@ import com.humorboy.practice.R;
 
 /**
  * ClassName: PacManRefreshHead<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 吃豆人效果刷新头部<p>
  * CreateDate:2016/2/12 22:55<p>
  * UpdateUser:<p>

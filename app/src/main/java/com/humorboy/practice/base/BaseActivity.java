@@ -40,9 +40,9 @@ import com.humorboy.practice.utils.RxBus;
 import com.humorboy.practice.utils.SpUtil;
 import com.humorboy.practice.utils.ThemeUtil;
 import com.humorboy.practice.utils.ViewUtil;
-import com.oubowu.slideback.SlideBackHelper;
-import com.oubowu.slideback.SlideConfig;
-import com.oubowu.slideback.widget.SlideBackLayout;
+import com.humorboy.slideback.SlideBackHelper;
+import com.humorboy.slideback.SlideConfig;
+import com.humorboy.slideback.widget.SlideBackLayout;
 import com.socks.library.KLog;
 import com.zhy.changeskin.SkinManager;
 
@@ -51,7 +51,7 @@ import rx.functions.Action1;
 
 /**
  * ClassName: BaseActivity<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: Activity的基类<p>
  * CreateDate:2016/2/14 18:42<p>
  * UpdateUser:<p>

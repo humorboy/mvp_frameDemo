@@ -1,4 +1,4 @@
-package com.oubowu.slideback;
+package com.humorboy.slideback;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
@@ -7,9 +7,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.oubowu.slideback.callbak.OnInternalStateListener;
-import com.oubowu.slideback.callbak.OnSlideListener;
-import com.oubowu.slideback.widget.SlideBackLayout;
+import com.humorboy.slideback.callbak.OnInternalStateListener;
+import com.humorboy.slideback.callbak.OnSlideListener;
+import com.humorboy.slideback.widget.SlideBackLayout;
 
 /**
  * Created by Oubowu on 2016/9/22 0022 14:31.

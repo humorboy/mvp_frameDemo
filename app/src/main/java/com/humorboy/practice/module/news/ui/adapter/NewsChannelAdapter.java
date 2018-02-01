@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * ClassName: NewsChannelAdapter<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 实现拖拽的逻辑的RecyclerView适配器<p>
  * CreateDate: 2016/2/20 2:12<p>
  * UpdateUser: <p>

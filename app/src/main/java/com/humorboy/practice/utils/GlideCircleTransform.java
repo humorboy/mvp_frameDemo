@@ -11,7 +11,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
 /**
  * ClassName: GlideCircleTransform<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: Glide圆图转换<p>
  * CreateDate:2016/2/14 13:15<p>
  * UpdateUser:<p>

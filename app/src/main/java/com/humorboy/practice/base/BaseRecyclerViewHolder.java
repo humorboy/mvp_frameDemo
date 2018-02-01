@@ -25,7 +25,7 @@ import com.humorboy.practice.widget.refresh.PacManRefreshHead;
 
 /**
  * ClassName: BaseRecyclerViewHolder<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: RecyclerView通用适配器Holder<p>
  * CreateDate:2016/2/16 23:00<p>
  * UpdateUser:<p>

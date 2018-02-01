@@ -13,7 +13,7 @@ import rx.subjects.Subject;
 
 /**
  * ClassName: RxBus<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: Rxjava实现的bus<p>
  * CreateDate:2016/2/14 13:15<p>
  * UpdateUser:<p>

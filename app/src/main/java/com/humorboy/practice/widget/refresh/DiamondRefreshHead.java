@@ -16,7 +16,7 @@ import com.humorboy.practice.R;
 
 /**
  * ClassName: UcRerfreshHead<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 下拉刷新的头部，方块风格<p>
  * CreateDate:2016/2/9 14:05<p>
  * UpdateUser:<p>

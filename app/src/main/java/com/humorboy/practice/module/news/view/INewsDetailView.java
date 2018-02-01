@@ -5,7 +5,7 @@ import com.humorboy.practice.bean.NeteastNewsDetail;
 
 /**
  * ClassName: INewsDetailView<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻详情视图接口<p>
  * CreateDate: 2016/2/19 14:52<p>
  * UpdateUser: <p>

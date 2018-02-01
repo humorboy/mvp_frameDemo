@@ -20,7 +20,7 @@ import rx.functions.Action1;
 
 /**
  * ClassName: BaseFragment<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: Fragment基类<p>
  * CreateDate:2016/2/14 19:52<p>
  * UpdateUser:<p>

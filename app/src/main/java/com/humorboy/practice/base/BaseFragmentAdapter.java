@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * ClassName: FragmentAdapter<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 装载Fragment的ViewPager适配器<p>
  * CreateDate: 2016/2/17 20:36<p>
  * UpdateUser: <p>

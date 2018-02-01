@@ -38,7 +38,7 @@ import java.util.List;
 
 /**
  * ClassName: NewsListFragment<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻列表界面<p>
  * CreateDate: 2016/2/17 20:50<p>
  * UpdateUser: <p>

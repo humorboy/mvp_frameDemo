@@ -29,7 +29,6 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/primary"
                 android:tag="skin:primary:background"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:theme="@style/ToolbarTheme"/>
@@ -106,6 +105,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
                 android:textColor="@color/secondary_text"
                 android:textSize="14sp"/>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -113,7 +113,9 @@
                 android:layout_marginRight="16dp"
                 android:background="@color/divider"
                 android:tag="skin:divider:background"/>
+
         </LinearLayout>
+
 
     </RelativeLayout>
 

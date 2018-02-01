@@ -33,8 +33,8 @@
     <color name="fab_color_night">#ddffab00</color>
 
     <!--配色-->
-    <color name="primary">#009688</color>
-    <color name="primary_dark">#00796B</color>
+    <color name="primary">#ff4cbd71</color>
+    <color name="primary_dark">#994cbd71</color>
     <color name="primary_light">#B2DFDB</color>
     <color name="accent">#ff8f00</color><!--#FF5722-->
     <color name="primary_text">#212121</color>

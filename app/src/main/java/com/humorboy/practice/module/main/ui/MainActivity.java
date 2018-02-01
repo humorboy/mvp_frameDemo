@@ -11,10 +11,9 @@ import com.humorboy.practice.app.AppManager;
 import com.humorboy.practice.module.main.presenter.IMainPresenter;
 import com.humorboy.practice.module.main.presenter.IMainPresenterImpl;
 import com.humorboy.practice.module.main.view.IMainView;
-import com.humorboy.practice.module.settings.presenter.ISettingsPresenterImpl;
 import com.humorboy.practice.ui.adapter.ItemListAdapter;
 import com.humorboy.practice.base.BaseActivity;
-import com.humorboy.practice.module.SearchLayout;
+import com.humorboy.practice.module.main.view.SearchLayout;
 import com.humorboy.practice.utils.ViewUtil;
 
 import java.util.ArrayList;
@@ -51,9 +50,9 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
         inputEdittext = searchView.getSearch_EditText();
 
         // 设了默认的windowBackground使得冷启动没那么突兀，这里再设置为空减少过度绘制
-//        getWindow().setBackgroundDrawable(null);
+        getWindow().setBackgroundDrawable(null);
         ViewUtil.quitFullScreen(this);
-//        AppManager.getAppManager().orderNavActivity(getClass().getName(), false);
+        AppManager.getAppManager().orderNavActivity(getClass().getName(), false);
 
         mPresenter = new IMainPresenterImpl(this);
     }
@@ -86,5 +85,10 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
     @Override
     public void initItemState() {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

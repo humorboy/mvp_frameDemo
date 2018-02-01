@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * ClassName: INewsPresenterImpl<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻代理接口实现<p>
  * CreateDate: 2016/2/17 21:04<p>
  * UpdateUser: <p>

@@ -38,7 +38,7 @@ import rx.Observable;
 
 /**
  * ClassName: RetrofitManager<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: Retrofit请求管理类<p>
  * CreateDate:2016/2/13 20:34<p>
  * UpdateUser:<p>

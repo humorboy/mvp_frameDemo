@@ -26,14 +26,12 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/primary"
                 android:tag="skin:primary:background"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:theme="@style/ToolbarTheme"/>
         </android.support.design.widget.AppBarLayout>
 
-        <!--<include layout="@layout/common_title"/>-->
-        <com.humorboy.practice.module.SearchLayout
+        <com.humorboy.practice.module.main.view.SearchLayout
             android:id="@+id/searchView"
             android:layout_below="@+id/app_bar"
             android:layout_width="match_parent"

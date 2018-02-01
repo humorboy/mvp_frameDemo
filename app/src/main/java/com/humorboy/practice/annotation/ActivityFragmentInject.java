@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * ClassName: ActivityFragmentInject<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: Activity、Fragment初始化的用到的注解<p>
  * CreateDate: 2016/2/15 23:30<p>
  * UpdateUser: <p>

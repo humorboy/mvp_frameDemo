@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * ClassName: NeteastNewsDetail<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 网易新闻列表<p>
  * CreateDate:2016/2/13 23:33<p>
  * UpdateUser:<p>

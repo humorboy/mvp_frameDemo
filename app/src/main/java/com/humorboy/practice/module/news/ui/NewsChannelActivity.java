@@ -27,7 +27,7 @@ import java.util.List;
 
 /**
  * ClassName: NewsChannelActivity<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻管理界面<p>
  * CreateDate: 2016/2/20 2:12<p>
  * UpdateUser: <p>

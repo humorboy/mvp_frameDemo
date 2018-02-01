@@ -22,7 +22,7 @@ import rx.schedulers.Schedulers;
 
 /**
  * ClassName: INewsInteractorImpl<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻Model层接口实现,数据库操作，第一次初始化频道，之后查询选中的频道<p>
  * CreateDate: 2016/2/20 15:05<p>
  * UpdateUser: <p>

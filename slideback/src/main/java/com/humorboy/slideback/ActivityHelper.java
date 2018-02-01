@@ -1,4 +1,4 @@
-package com.oubowu.slideback;
+package com.humorboy.slideback;
 
 import android.app.Activity;
 import android.app.Application;

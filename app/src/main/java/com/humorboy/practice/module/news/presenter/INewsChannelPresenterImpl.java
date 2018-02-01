@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * ClassName:INewsChannelPresenterImpl <p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻频道管理代理接口实现<p>
  * CreateDate: 2016/2/20 14:02<p>
  * UpdateUser: <p>

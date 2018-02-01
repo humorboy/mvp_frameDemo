@@ -1,4 +1,4 @@
-package com.oubowu.slideback.widget;
+package com.humorboy.slideback.widget;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.oubowu.slideback.SlideConfig;
-import com.oubowu.slideback.callbak.OnInternalStateListener;
+import com.humorboy.slideback.SlideConfig;
+import com.humorboy.slideback.callbak.OnInternalStateListener;
 
 /**
  * Created by Oubowu on 2016/9/22 0022 15:24.

@@ -2,7 +2,7 @@ package com.humorboy.practice.http;
 
 /**
  * ClassName: NewsApi<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 请求接口<p>
  * CreateDate:2016/2/13 19:10<p>
  * UpdateUser:<p>

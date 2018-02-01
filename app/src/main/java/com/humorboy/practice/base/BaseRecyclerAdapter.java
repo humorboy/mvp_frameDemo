@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * ClassName:
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: RecyclerView通用适配器<p>
  * CreateDate:2016/2/16 22:47<p>
  * UpdateUser:<p>

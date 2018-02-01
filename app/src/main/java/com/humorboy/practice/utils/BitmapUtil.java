@@ -9,7 +9,7 @@ import android.view.View;
 
 /**
  * ClassName: BitmapUtil<p>
- * Author:oubowu<p>
+ * Author:humorboy<p>
  * Fuction: 图片工具类<p>
  * CreateDate:2016/2/13 18:12<p>
  * UpdateUser:<p>

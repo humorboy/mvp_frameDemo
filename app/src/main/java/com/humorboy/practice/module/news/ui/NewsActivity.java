@@ -26,7 +26,7 @@ import rx.functions.Action1;
 
 /**
  * ClassName: NewsActivity<p>
- * Author: oubowu<p>
+ * Author: humorboy<p>
  * Fuction: 新闻界面<p>
  * CreateDate: 2016/2/20 2:12<p>
  * UpdateUser: <p>
