@@ -9,7 +9,6 @@
 
     <string name="channel_manage">频道管理</string>
     <string name="settings">设置</string>
-    <string name="photo">图片</string>
     <string name="video">视频</string>
     <string name="news">新闻</string>
     <string name="mains">首页</string>
@@ -19,6 +18,12 @@
     <string name="from">来源: %1$s  %2$s</string>
     <string name="weather">天气</string>
     <string name="news_detail">新闻详情</string>
+    <string name="map">地图</string>
+    <string name="weather_live">实时</string>
+    <string name="weather_forecast">预报</string>
+    <string name="report_time">发布时间</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+
 
     新闻的可选频道-->
     <string-array name="news_channel">

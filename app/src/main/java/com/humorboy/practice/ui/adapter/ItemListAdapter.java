@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.humorboy.practice.R;
 import com.humorboy.practice.module.settings.ui.SettingsActivity;
 import com.humorboy.practice.ui.activity.LoadingViewActivity;
-import com.humorboy.practice.ui.activity.MapActivity;
+import com.humorboy.practice.module.map.ui.MapActivity;
 import com.humorboy.practice.ui.activity.SpeechRecognitionActivity;
 import com.humorboy.practice.ui.activity.ThreadPoolTestActivity;
 

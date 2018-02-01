@@ -57,6 +57,13 @@
             android:theme="@style/BaseAppTheme.AppTheme">
         </activity>
         <activity
+            android:name=".module.weather.WeatherSearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_news_channel_manage"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAppTheme.AppTheme">
+        </activity>
+        <activity
             android:name=".module.settings.ui.SettingsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
@@ -64,9 +71,12 @@
         </activity>
         <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.ThreadPoolTestActivity" />
-        <activity android:name=".ui.activity.MapActivity" />
+        <activity android:name=".module.map.ui.MapActivity" />
         <activity android:name=".ui.activity.SpeechRecognitionActivity" />
         <activity android:name=".ui.activity.LoadingViewActivity"></activity>
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" ></service>
     </application>
 
 </manifest>

@@ -32,7 +32,7 @@ import com.humorboy.practice.app.DemoApplication;
 import com.humorboy.practice.module.main.ui.MainActivity;
 import com.humorboy.practice.module.news.ui.NewsActivity;
 import com.humorboy.practice.module.settings.ui.SettingsActivity;
-import com.humorboy.practice.ui.activity.MapActivity;
+import com.humorboy.practice.module.weather.WeatherSearchActivity;
 import com.humorboy.practice.utils.GlideCircleTransform;
 import com.humorboy.practice.utils.GlideUtils;
 import com.humorboy.practice.utils.MeasureUtil;
@@ -92,7 +92,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     /**
      * 菜单的id
      */
-    private int mMenuId;
+    private int mMenuId = 0;
 
     /**
      * Toolbar标题
@@ -317,6 +317,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
                         break;
                     case R.id.action_settings:
                         mClass = SettingsActivity.class;
+                        break;
+                    case R.id.action_weathers:
+                        mClass = WeatherSearchActivity.class;
                         break;
                 }
                 mDrawerLayout.closeDrawer(GravityCompat.START);

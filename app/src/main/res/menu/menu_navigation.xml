@@ -14,9 +14,9 @@
             android:title="@string/mains"/>
 
         <item
-            android:id="@+id/action_photo"
+            android:id="@+id/action_weathers"
             android:icon="@drawable/ic_insert_photo_black"
-            android:title="@string/photo"/>
+            android:title="@string/weather"/>
 
         <item
             android:id="@+id/action_settings"

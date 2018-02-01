@@ -4,13 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.humorboy.practice.ui.activity.MapActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.humorboy.practice.module.map.ui.MapActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <include layout="@layout/common_title"/>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:tag="skin:primary:background"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ToolbarTheme"/>
+    </android.support.design.widget.AppBarLayout>
+
     <com.amap.api.maps.MapView
         android:id="@+id/map"
-        android:layout_below="@+id/custom_actionbar"
+        android:layout_below="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </RelativeLayout>
