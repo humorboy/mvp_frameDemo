@@ -232,13 +232,13 @@ public class RetrofitManager {
 //    }
 
     /**
-     * 天气情况 例子：http://wthrcdn.etouch.cn/weather_mini?city=%E5%8C%97%E4%BA%AC
+     * 天气情况 例子：http://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=9d668922bd8931b2fbc078fbde09e415
      *
      * @param city 城市名称
      * @return 被观察者
      */
     public Observable<WeatherInfo> getWeatherInfoObservable(String city) {
-        return mNewsService.getWeatherInfo(city).compose(new BaseSchedulerTransformer<WeatherInfo>());
+        return mNewsService.getWeatherInfo(Api.WEATHER_KEY,city).compose(new BaseSchedulerTransformer<WeatherInfo>());
     }
 
 }

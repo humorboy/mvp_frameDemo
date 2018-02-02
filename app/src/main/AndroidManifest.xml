@@ -64,6 +64,13 @@
             android:theme="@style/BaseAppTheme.AppTheme">
         </activity>
         <activity
+            android:name=".module.weather.ui.WeathersActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_news_channel_manage"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAppTheme.AppTheme">
+        </activity>
+        <activity
             android:name=".module.settings.ui.SettingsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"

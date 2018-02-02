@@ -17,7 +17,7 @@ import rx.functions.Func1;
 import rx.functions.Func2;
 
 /**
- * ClassName: INewsListInteractorImpl<p>
+ * ClassName: IWeathersInteractorImpl<p>
  * Author: humorboy<p>
  * Fuction: 新闻列表Model层接口实现<p>
  * CreateDate: 2016/2/17 21:02<p>

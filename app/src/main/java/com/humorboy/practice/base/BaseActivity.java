@@ -33,6 +33,7 @@ import com.humorboy.practice.module.main.ui.MainActivity;
 import com.humorboy.practice.module.news.ui.NewsActivity;
 import com.humorboy.practice.module.settings.ui.SettingsActivity;
 import com.humorboy.practice.module.weather.WeatherSearchActivity;
+import com.humorboy.practice.module.weather.ui.WeathersActivity;
 import com.humorboy.practice.utils.GlideCircleTransform;
 import com.humorboy.practice.utils.GlideUtils;
 import com.humorboy.practice.utils.MeasureUtil;
@@ -319,7 +320,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
                         mClass = SettingsActivity.class;
                         break;
                     case R.id.action_weathers:
-                        mClass = WeatherSearchActivity.class;
+                        mClass = WeathersActivity.class;
                         break;
                 }
                 mDrawerLayout.closeDrawer(GravityCompat.START);

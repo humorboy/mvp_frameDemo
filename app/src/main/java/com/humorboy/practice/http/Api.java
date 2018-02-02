@@ -107,10 +107,14 @@ public class Api {
     // 精品视频
     public static final String VIDEO_CHOICE_ID = "00850FRB";
 
+    //高德web请求KEY
+    public static final String WEATHER_KEY = "9d668922bd8931b2fbc078fbde09e415";
+
     /**
      * 天气预报url
      */
-    public static final String WEATHER_HOST = "http://wthrcdn.etouch.cn/";
+//    public static final String WEATHER_HOST = "http://wthrcdn.etouch.cn/";
+    public static final String WEATHER_HOST = "http://restapi.amap.com/v3/";
 
     /**
      * 新浪图片新闻

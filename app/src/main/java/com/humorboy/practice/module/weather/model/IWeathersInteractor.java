@@ -1,4 +1,4 @@
-package com.humorboy.practice.module.news.model;
+package com.humorboy.practice.module.weather.model;
 
 
 import com.humorboy.practice.callback.RequestCallback;
@@ -13,8 +13,8 @@ import rx.Subscription;
  * UpdateUser: <p>
  * UpdateDate: <p>
  */
-public interface INewsListInteractor<T> {
+public interface IWeathersInteractor<T> {
 
-    Subscription requestNewsList(RequestCallback<T> callback, String type, String id, int startPage);
+    Subscription requestWeatherInfo(RequestCallback<T> callback, String city);
 
 }

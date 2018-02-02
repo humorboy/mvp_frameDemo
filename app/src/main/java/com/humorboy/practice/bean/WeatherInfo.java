@@ -1,8 +1,5 @@
 package com.humorboy.practice.bean;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 /**
@@ -13,104 +10,156 @@ import java.util.List;
  * UpdateUser:<p>
  * UpdateDate:<p>
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherInfo {
 
 
-    @JsonProperty("desc")
-    public String desc;
-    @JsonProperty("status")
-    public int status;
+    /**
+     * status : 1
+     * count : 1
+     * info : OK
+     * infocode : 10000
+     * lives : [{"province":"北京","city":"东城区","adcode":"110101","weather":"晴","temperature":"-2","winddirection":"西北","windpower":"9","humidity":"16","reporttime":"2018-02-02 14:00:00"}]
+     */
 
-    @JsonProperty("data")
-    public DataEntity data;
+    private String status;
+    private String count;
+    private String info;
+    private String infocode;
+    private List<LivesEntity> lives;
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class DataEntity {
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-        @Override
-        public String toString() {
-            return "DataEntity{" +
-                    "wendu='" + wendu + '\'' +
-                    ", ganmao='" + ganmao + '\'' +
-                    ", yesterday=" + yesterday +
-                    ", aqi='" + aqi + '\'' +
-                    ", city='" + city + '\'' +
-                    ", forecast=" + forecast +
-                    '}';
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public void setInfocode(String infocode) {
+        this.infocode = infocode;
+    }
+
+    public void setLives(List<LivesEntity> lives) {
+        this.lives = lives;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public String getInfocode() {
+        return infocode;
+    }
+
+    public List<LivesEntity> getLives() {
+        return lives;
+    }
+
+    public static class LivesEntity {
+        /**
+         * province : 北京
+         * city : 东城区
+         * adcode : 110101
+         * weather : 晴
+         * temperature : -2
+         * winddirection : 西北
+         * windpower : 9
+         * humidity : 16
+         * reporttime : 2018-02-02 14:00:00
+         */
+
+        private String province;
+        private String city;
+        private String adcode;
+        private String weather;
+        private String temperature;
+        private String winddirection;
+        private String windpower;
+        private String humidity;
+        private String reporttime;
+
+        public void setProvince(String province) {
+            this.province = province;
         }
 
-        @JsonProperty("wendu")
-        public String wendu;
-        @JsonProperty("ganmao")
-        public String ganmao;
-
-        @JsonProperty("yesterday")
-        public YesterdayEntity yesterday;
-        @JsonProperty("aqi")
-        public String aqi;
-        @JsonProperty("city")
-        public String city;
-
-        @JsonProperty("forecast")
-        public List<ForecastEntity> forecast;
-
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class YesterdayEntity {
-
-            @Override
-            public String toString() {
-                return "YesterdayEntity{" +
-                        "fl='" + fl + '\'' +
-                        ", fx='" + fx + '\'' +
-                        ", high='" + high + '\'' +
-                        ", type='" + type + '\'' +
-                        ", low='" + low + '\'' +
-                        ", date='" + date + '\'' +
-                        '}';
-            }
-
-            @JsonProperty("fl")
-            public String fl;
-            @JsonProperty("fx")
-            public String fx;
-            @JsonProperty("high")
-            public String high;
-            @JsonProperty("type")
-            public String type;
-            @JsonProperty("low")
-            public String low;
-            @JsonProperty("date")
-            public String date;
+        public void setCity(String city) {
+            this.city = city;
         }
 
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class ForecastEntity {
+        public void setAdcode(String adcode) {
+            this.adcode = adcode;
+        }
 
-            @Override
-            public String toString() {
-                return "ForecastEntity{" +
-                        "fengxiang='" + fengxiang + '\'' +
-                        ", fengli='" + fengli + '\'' +
-                        ", high='" + high + '\'' +
-                        ", type='" + type + '\'' +
-                        ", low='" + low + '\'' +
-                        ", date='" + date + '\'' +
-                        '}';
-            }
+        public void setWeather(String weather) {
+            this.weather = weather;
+        }
 
-            @JsonProperty("fengxiang")
-            public String fengxiang;
-            @JsonProperty("fengli")
-            public String fengli;
-            @JsonProperty("high")
-            public String high;
-            @JsonProperty("type")
-            public String type;
-            @JsonProperty("low")
-            public String low;
-            @JsonProperty("date")
-            public String date;
+        public void setTemperature(String temperature) {
+            this.temperature = temperature;
+        }
+
+        public void setWinddirection(String winddirection) {
+            this.winddirection = winddirection;
+        }
+
+        public void setWindpower(String windpower) {
+            this.windpower = windpower;
+        }
+
+        public void setHumidity(String humidity) {
+            this.humidity = humidity;
+        }
+
+        public void setReporttime(String reporttime) {
+            this.reporttime = reporttime;
+        }
+
+        public String getProvince() {
+            return province;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public String getAdcode() {
+            return adcode;
+        }
+
+        public String getWeather() {
+            return weather;
+        }
+
+        public String getTemperature() {
+            return temperature;
+        }
+
+        public String getWinddirection() {
+            return winddirection;
+        }
+
+        public String getWindpower() {
+            return windpower;
+        }
+
+        public String getHumidity() {
+            return humidity;
+        }
+
+        public String getReporttime() {
+            return reporttime;
         }
     }
 }

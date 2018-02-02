@@ -14,6 +14,12 @@ import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.weather.LocalDayWeatherForecast;
+import com.amap.api.services.weather.LocalWeatherForecast;
+import com.amap.api.services.weather.LocalWeatherForecastResult;
+import com.amap.api.services.weather.LocalWeatherLive;
+import com.amap.api.services.weather.LocalWeatherLiveResult;
 import com.amap.api.services.weather.WeatherSearch;
 import com.amap.api.services.weather.WeatherSearchQuery;
 import com.humorboy.practice.R;
@@ -21,18 +27,32 @@ import com.humorboy.practice.annotation.ActivityFragmentInject;
 import com.humorboy.practice.base.BaseActivity;
 import com.humorboy.practice.module.map.presenter.IMapPresenter;
 import com.humorboy.practice.module.map.view.IMapView;
+import com.humorboy.practice.utils.GeneralUtils;
 import com.humorboy.practice.utils.MeasureUtil;
+import com.humorboy.practice.utils.ToastUtil;
+import com.socks.library.KLog;
+
+import java.util.List;
+
+import static com.amap.api.services.core.SearchUtils.getSHA1;
 
 @ActivityFragmentInject(contentViewId = R.layout.activity_map,
         menuId = R.menu.menu_settings,
         toolbarTitle = R.string.map,
         enableSlidr = false)
-public class MapActivity extends BaseActivity<IMapPresenter> implements IMapView {
+public class MapActivity extends BaseActivity<IMapPresenter> implements IMapView,WeatherSearch.OnWeatherSearchListener {
     MapView mMapView = null;
     AMap aMap;
     private static final int STROKE_COLOR = Color.argb(180, 3, 145, 255);
     private static final int FILL_COLOR = Color.argb(10, 0, 0, 180);
     private UiSettings mUiSettings;//定义一个UiSettings对象
+
+    private WeatherSearchQuery mquery;
+    private WeatherSearch mweathersearch;
+    private LocalWeatherLive weatherlive;
+    private LocalWeatherForecast weatherforecast;
+    private List<LocalDayWeatherForecast> forecastlist = null;
+    private String cityname = "北京市";//天气搜索的城市，可以写名称或adcode；
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,5 +129,69 @@ public class MapActivity extends BaseActivity<IMapPresenter> implements IMapView
     @Override
     public void initMap() {
         //检索参数为城市和天气类型，实况天气为WEATHER_TYPE_LIVE、天气预报为WEATHER_TYPE_FORECAST
+        searchliveweather();
+        searchforcastsweather();
     }
+
+    /**
+     * 预报天气查询
+     */
+    private void searchforcastsweather() {
+        mquery = new WeatherSearchQuery(cityname, WeatherSearchQuery.WEATHER_TYPE_FORECAST);//检索参数为城市和天气类型，实时天气为1、天气预报为2
+        mweathersearch = new WeatherSearch(this);
+        mweathersearch.setOnWeatherSearchListener(this);
+        mweathersearch.setQuery(mquery);
+        mweathersearch.searchWeatherAsyn(); //异步搜索
+    }
+
+    /**
+     * 实时天气查询
+     */
+    private void searchliveweather() {
+        mquery = new WeatherSearchQuery(cityname, WeatherSearchQuery.WEATHER_TYPE_LIVE);//检索参数为城市和天气类型，实时天气为1、天气预报为2
+        mweathersearch = new WeatherSearch(this);
+        mweathersearch.setOnWeatherSearchListener(this);
+        mweathersearch.setQuery(mquery);
+        mweathersearch.searchWeatherAsyn(); //异步搜索
+    }
+
+    /**
+     * 实时天气查询回调
+     */
+    @Override
+    public void onWeatherLiveSearched(LocalWeatherLiveResult weatherLiveResult, int rCode) {
+        KLog.e("天气预报  rCode = "+rCode+"  weatherLiveResult"+weatherLiveResult+" SHA1 = "+getSHA1(this));
+        if (rCode == AMapException.CODE_AMAP_SUCCESS) {
+            if (weatherLiveResult != null && weatherLiveResult.getLiveResult() != null) {
+                weatherlive = weatherLiveResult.getLiveResult();
+            } else {
+                ToastUtil.makeText(MapActivity.this, getString(R.string.no_result));
+            }
+        } else {
+            ToastUtil.makeText(MapActivity.this,""+ rCode);
+        }
+    }
+
+    /**
+     * 天气预报查询结果回调
+     */
+    @Override
+    public void onWeatherForecastSearched(LocalWeatherForecastResult weatherForecastResult, int rCode) {
+        KLog.e("天气预报  rCode = "+rCode+"  weatherForecastResult"+weatherForecastResult+" SHA1 = "+ GeneralUtils.getSHA1(this));
+        if (rCode == AMapException.CODE_AMAP_SUCCESS) {
+            if (weatherForecastResult != null && weatherForecastResult.getForecastResult() != null
+                    && weatherForecastResult.getForecastResult().getWeatherForecast() != null
+                    && weatherForecastResult.getForecastResult().getWeatherForecast().size() > 0) {
+                weatherforecast = weatherForecastResult.getForecastResult();
+                forecastlist = weatherforecast.getWeatherForecast();
+
+            } else {
+                ToastUtil.makeText(MapActivity.this, getString(R.string.no_result));
+            }
+        } else {
+            ToastUtil.makeText(MapActivity.this,"" + rCode);
+        }
+    }
+    
+    
 }
