@@ -3,8 +3,10 @@ package com.humorboy.practice.module.weather.ui;
 import android.content.res.ColorStateList;
 import android.os.Build;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckedTextView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -26,16 +28,25 @@ import com.zhy.changeskin.SkinManager;
 
 import static com.amap.api.services.core.SearchUtils.getSHA1;
 
-@ActivityFragmentInject(contentViewId = R.layout.activity_settings,
+@ActivityFragmentInject(contentViewId = R.layout.weather_activity,
         menuId = R.menu.menu_settings,
         hasNavigationView = true,
-        toolbarTitle = R.string.settings,
+        toolbarTitle = R.string.weather,
         toolbarIndicator = R.drawable.ic_list_white,
-        menuDefaultCheckedItem = R.id.action_settings)
+        menuDefaultCheckedItem = R.id.action_weathers)
 public class WeathersActivity extends BaseActivity<IWeathersPresenter> implements IWeathersView {
+    private TextView city;
+    private TextView temp;
+    private TextView report_time;
+    private TextView humidity;
+
 
     @Override
     protected void initView() {
+        city = (TextView) findViewById(R.id.city);
+        temp = (TextView) findViewById(R.id.temp);
+        report_time = (TextView) findViewById(R.id.report_time);
+        humidity  = (TextView) findViewById(R.id.humidity);
         mPresenter = new IWeathersPresenterImpl(this, "110101");
     }
     @Override
@@ -48,6 +59,13 @@ public class WeathersActivity extends BaseActivity<IWeathersPresenter> implement
 
     @Override
     public void updateWeatherInfo(WeatherInfo data, String message) {
+        if(data != null){
+            KLog.e("天气预报  data = "+data.getLives().get(0).getCity()+data.getLives().get(0).getHumidity()+" message  = "+message);
+            city.setText(data.getLives().get(0).getProvince()+":"+data.getLives().get(0).getCity());
+            temp.setText(data.getLives().get(0).getTemperature());
+            report_time.setText("发布时间:"+data.getLives().get(0).getReporttime());
+            humidity.setText("空气湿度:"+data.getLives().get(0).getHumidity());
+        }
         KLog.e("天气预报  data = "+data+" message  = "+message);
         if(data != null){
             KLog.e("天气预报  data = "+data);

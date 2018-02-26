@@ -52,9 +52,12 @@ public interface NewsService {
      * @param city 城市名称
      * @return 被观察者
      */
-    @GET("weather/weatherInfo{key}/{city}")
+    @GET("weather/weatherInfo")
     Observable<WeatherInfo> getWeatherInfo(
-            @Path("key") String key,
+            @Query("key") String key,
             @Query("city") String city);
+
+//    @GET("weather/weatherInfo")
+//    Observable<WeatherInfo> getWeatherInfo(@Query("key") String key, @Query("city") String city);
 
 }

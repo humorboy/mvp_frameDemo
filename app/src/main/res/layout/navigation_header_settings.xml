@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="172dp"
-    android:tag="skin:ic_navigation_header_bg:background"
-    android:background="@drawable/ic_navigation_header_bg"
+    android:tag="skin:ic_navigation_header_bg:backgr不以己悲ound"
+    android:background="@color/material_cyan_a700"
     android:paddingTop="25dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -16,7 +16,7 @@
         android:layout_margin="@dimen/spacing_large"
         android:elevation="4dp"
         android:scaleType="centerCrop"
-        tools:src="@mipmap/ic_launcher"/>
+        tools:src="@mipmap/app_icon"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_marginBottom="4dp"
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginStart="@dimen/spacing_large"
-        android:text="(ー_ー)"
+        android:text="humorboy"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_marginBottom="@dimen/spacing_large"
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginStart="@dimen/spacing_large"
-        android:text="只是个摆设"
+        android:text="不以物喜,不以己悲"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </RelativeLayout>

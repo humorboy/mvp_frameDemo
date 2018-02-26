@@ -1,5 +1,7 @@
 package com.humorboy.practice.bean;
 
+import com.socks.library.KLog;
+
 import java.util.List;
 
 /**
