@@ -4,6 +4,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -71,6 +72,13 @@ public class WeathersActivity extends BaseActivity<IWeathersPresenter> implement
         report_time = (TextView) findViewById(R.id.report_time);
         humidity  = (TextView) findViewById(R.id.humidity);
         mPresenter = new IWeathersPresenterImpl(this, "110101");
+        WeatherInfoFragment weatherInfoFragment = (WeatherInfoFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (weatherInfoFragment == null) {
+            weatherInfoFragment = WeatherInfoFragment.newInstance();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.fragment_container, weatherInfoFragment);
+            transaction.commit();
+        }
     }
     @Override
     public void onClick(View v) {
@@ -98,5 +106,10 @@ public class WeathersActivity extends BaseActivity<IWeathersPresenter> implement
         if(message != null){
             KLog.e("天气预报  message = "+message);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

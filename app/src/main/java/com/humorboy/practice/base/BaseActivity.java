@@ -461,17 +461,18 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     }
 
     public void showActivityReorderToFront(Activity aty, Class<?> cls, boolean backPress) {
+        if(cls != null){
+            DemoApplication.getActivityHelper().addActivity(cls);
 
-        DemoApplication.getActivityHelper().addActivity(cls);
+            AppManager.getAppManager().orderNavActivity(cls.getName(), backPress);
 
-        AppManager.getAppManager().orderNavActivity(cls.getName(), backPress);
-
-        Intent intent = new Intent();
-        intent.setClass(aty, cls);
-        // 此标志用于启动一个Activity的时候，若栈中存在此Activity实例，则把它调到栈顶。不创建多一个
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        aty.startActivity(intent);
-        overridePendingTransition(0, 0);
+            Intent intent = new Intent();
+            intent.setClass(aty, cls);
+            // 此标志用于启动一个Activity的时候，若栈中存在此Activity实例，则把它调到栈顶。不创建多一个
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            aty.startActivity(intent);
+            overridePendingTransition(0, 0);
+        }
     }
 
     public void showActivity(Activity aty, Intent it) {
@@ -505,7 +506,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
                 // 返回键时未关闭侧栏时关闭侧栏
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
-            } else if (!(this instanceof MainActivity) && mHasNavigationView) {
+            } else if (!(this instanceof WeathersActivity) && mHasNavigationView) {
                 try {
                     showActivityReorderToFront(this, AppManager.getAppManager().getLastNavActivity(), true);
                 } catch (ClassNotFoundException e) {
