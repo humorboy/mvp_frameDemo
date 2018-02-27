@@ -30,7 +30,7 @@
             android:name="com.amap.api.v2.apikey"
             android:value="6f3a077d6ce0253355af8214ef195091" />
 
-        <activity android:name=".module.main.ui.MainActivity">
+        <activity android:name=".module.weather.ui.WeathersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,7 +57,7 @@
             android:theme="@style/BaseAppTheme.AppTheme">
         </activity>
         <activity
-            android:name=".module.weather.ui.WeathersActivity"
+            android:name=".module.main.ui.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/BaseAppTheme.AppTheme">

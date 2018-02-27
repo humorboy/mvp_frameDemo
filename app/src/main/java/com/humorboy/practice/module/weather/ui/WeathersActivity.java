@@ -1,7 +1,9 @@
 package com.humorboy.practice.module.weather.ui;
 
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +24,13 @@ import com.humorboy.practice.utils.ClickUtils;
 import com.humorboy.practice.utils.RxBus;
 import com.humorboy.practice.utils.SpUtil;
 import com.humorboy.practice.utils.ThemeUtil;
+import com.humorboy.practice.utils.ToastUtil;
 import com.humorboy.practice.utils.ViewUtil;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.socks.library.KLog;
 import com.zhy.changeskin.SkinManager;
 
@@ -39,10 +47,25 @@ public class WeathersActivity extends BaseActivity<IWeathersPresenter> implement
     private TextView temp;
     private TextView report_time;
     private TextView humidity;
+    private SmartRefreshLayout smartRefreshLayout;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
 
 
     @Override
     protected void initView() {
+        smartRefreshLayout = (SmartRefreshLayout) findViewById(R.id.refresh_layout);
+        //设置 Header 为 Material风格
+        ClassicsHeader header = new ClassicsHeader(this);
+        header.setPrimaryColors(this.getResources().getColor(R.color.primary), Color.WHITE);
+        this.smartRefreshLayout.setRefreshHeader(header);
+        //下拉刷新
+        smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshLayout) {
+                refreshLayout.finishRefresh(2000);
+            }
+        });
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         city = (TextView) findViewById(R.id.city);
         temp = (TextView) findViewById(R.id.temp);
         report_time = (TextView) findViewById(R.id.report_time);
@@ -53,7 +76,6 @@ public class WeathersActivity extends BaseActivity<IWeathersPresenter> implement
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ctv_night_mode:
-
         }
     }
 
@@ -61,10 +83,12 @@ public class WeathersActivity extends BaseActivity<IWeathersPresenter> implement
     public void updateWeatherInfo(WeatherInfo data, String message) {
         if(data != null){
             KLog.e("天气预报  data = "+data.getLives().get(0).getCity()+data.getLives().get(0).getHumidity()+" message  = "+message);
-            city.setText(data.getLives().get(0).getProvince()+":"+data.getLives().get(0).getCity());
-            temp.setText(data.getLives().get(0).getTemperature());
-            report_time.setText("发布时间:"+data.getLives().get(0).getReporttime());
-            humidity.setText("空气湿度:"+data.getLives().get(0).getHumidity());
+            city.setText(data.getLives().get(0).getCity());
+            temp.setText(data.getLives().get(0).getTemperature()+"°");
+            report_time.setText("发布时间:"+data.getLives().get(0).getReporttime().substring(11));
+            humidity.setText("湿度:"+data.getLives().get(0).getHumidity());
+            collapsingToolbarLayout.setTitle(data.getLives().get(0).getProvince());
+            setToolbarTitle(data.getLives().get(0).getProvince());
         }
         KLog.e("天气预报  data = "+data+" message  = "+message);
         if(data != null){
